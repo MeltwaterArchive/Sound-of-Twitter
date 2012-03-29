@@ -1,0 +1,61 @@
+body { height: 100%; width: 100%; overflow: hidden; padding: 10% }
+
+.note {
+	width: 15%;
+	height: 15%;
+	border-radius: 50%;
+	margin: -50px 0px 0px -50px;
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: purple;
+}
+
+.note.hover {
+    width: 150%;
+    height: 150%;
+    -moz-border-radius: 75%;
+    -webkit-border-radius: 75%;
+    border-radius: 75%;
+    margin: -75% 0 0 -75%;
+	opacity: 0.6;
+	background: purple;
+}
+
+#e0 { background: #ff0000; top: 15%; left: 20%; }
+#e1 { background: #dc1c00; top: 38%; left: 20%; }
+#e2 { background: #c53400; top: 60%; left: 20%; }
+#e3 { background: #b34500; top: 82%; left: 20%; }
+
+#e4 { background: #a05e00; top: 15%; left: 50%; }
+#e5 { background: #8b7700; top: 38%; left: 50%; }
+#e6 { background: #789200; top: 60%; left: 50%; }
+#e7 { background: #62ad00; top: 82%; left: 50%; }
+
+#e8 { background: #49c600; top: 15%; left: 80%; }
+#e9 { background: #30d500; top: 38%; left: 80%; }
+#e10 { background: #20e500; top: 60%; left: 80%; }
+#e11 { background: #00ff00; top: 82%; left: 80%; }
+
+#title {
+	display: none;
+	width: 528px;
+	height: 157px;
+	left: 50%;
+	margin-left: -264px;
+	top: 50%;
+	margin-top: -78px;
+	background: url(life.png) no-repeat center;
+	position: absolute;
+	z-index: 500;
+	text-indent: -9999px;
+}
+
+audio {
+	display: hidden;
+}
