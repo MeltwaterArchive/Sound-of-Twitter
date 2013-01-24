@@ -1,21 +1,37 @@
-#Sound of Twitter
+# Sound of Twitter
 
-Using DataSift this is a little application which visualises the sentiment from Twitter with lights and sounds.
+Use [DataSift](http://datasift.com) to visualize the sentiment on Twitter with lights and sounds.
 
-You can see a demo over on [YouTube](http://www.youtube.com/watch?v=DLlBSY-ci7U) or read more information on [DataSift Labs](http://labs.datasift.com]
+You can see a demo over on [YouTube](http://www.youtube.com/watch?v=DLlBSY-ci7U) or read more information on [DataSift Labs](http://labs.datasift.com)
 
-##Prerequisites 
+## Prerequisites 
 
-You will need to get a API key from [DataSift](http://datasift.com). 
+You will need:
 
-You will need credit on your DataSift account (depending on the stream, this application may rapidly consume your credits).
+ * an API key from [DataSift](http://datasift.com). 
 
-You will need to agree to the [Salience Entities](http://datasift.com/source/19/salience-entities) data source.
+ * credit on your DataSift account (depending on the stream, this application may rapidly consume your credits).
 
-##Configuration
+ * access to the [Salience Entities](http://datasift.com/source/19/salience-entities) data source.
 
-<pre>
-	DataSift.connect('<username>', '<apikey>', 'websocket.datasift.com');
-</pre>
+## Configuration
 
-Change line 39 of sound.js to include your username and password. Currently the default stream is a search for a keyword 'life' in order to change you search change line 40 to include the stream hash of what you want to search for.
+Locate the following line in `sound.js`:
+
+```javascript
+// connect to DataSift
+DataSift.connect('<username>', '<apikey>', 'websocket.datasift.com');
+```
+
+Replace `<username>` with your DataSift username and `<apikey>` with your DataSift API key (look for it on your DataSift account page).
+
+Save `sound.js` and open `index.html` in a web browser.
+
+The default configuration of `sound.js` references a stream that filters for 'life'.  You can create your own stream and filter for other keywords.  If you do, you must change the stream hash in the call to `DataSift.register()`:
+
+```javascript
+DataSift.register('b65ceba2ba57cadc880a18bd48c2f467', {
+	onMessage: function(d) { this.onMessage(d); }.bind(this),
+	onError: function() {}
+	});
+```
